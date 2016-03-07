@@ -1,0 +1,1 @@
+E:\Archivos\Documentos\Visual Studio Projects\AppCalculatorOfMonsters\AppCalculatorOfMonsters\AppCalculatorOfMonsters.csproj;x86

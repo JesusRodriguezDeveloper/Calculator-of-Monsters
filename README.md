@@ -1,1 +1,1 @@
-Calculator-of-Monsters
+AppCalculatorOfMonsters

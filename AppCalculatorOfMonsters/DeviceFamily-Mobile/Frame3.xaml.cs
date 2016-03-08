@@ -20,28 +20,11 @@ namespace AppCalculatorOfMonsters.DeviceFamily_Mobile
     /// <summary>
     /// Una página vacía que se puede usar de forma independiente o a la que se puede navegar dentro de un objeto Frame.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class Frame3 : Page
     {
-        public MainPage()
+        public Frame3()
         {
             this.InitializeComponent();
-        }
-
-        private void HamburgerButton_Click(object sender, RoutedEventArgs e)
-        {
-            MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
-        }
-
-        private void IconsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (Frame1ListBoxItem.IsSelected)
-            {
-                Frame.Navigate(typeof(Frame1), sender);
-            }
-            else if (Frame2ListBoxItem.IsSelected)
-            {
-                Frame.Navigate(typeof(Frame2), sender);
-            }
         }
     }
 }

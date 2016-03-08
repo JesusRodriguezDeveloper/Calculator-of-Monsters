@@ -8,6 +8,55 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock Text="Movil"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" MinHeight="50" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Button x:Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" FontSize="36" Click="HamburgerButton_Click" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="60" Height="60" Background="#00000000" BorderThickness="0" Margin="17,0" />
+        <Viewbox Margin="0,5" Height="50" RelativePanel.AlignRightWith="" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" Grid.Column="1" d:LayoutOverrides="LeftPosition, RightPosition" >
+            <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="Calculator of Monsters" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="5"/>
+        </Viewbox>
+        <SplitView x:Name="MySplitView" 
+                   Grid.Row="1" 
+                   DisplayMode="CompactOverlay" 
+                   OpenPaneLength="300" 
+                   CompactPaneLength="60" Margin="0" HorizontalAlignment="Left" Grid.ColumnSpan="2">
+            <SplitView.Pane>
+                <ListBox SelectionMode="Single" 
+                         x:Name="IconsListBox" 
+                         SelectionChanged="IconsListBox_SelectionChanged" HorizontalAlignment="Left">
+                    <ListBoxItem x:Name="Frame1ListBoxItem">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE169;" />
+                            <TextBlock Text="Listado" FontSize="24" Margin="20,0,0,0" />
+                        </StackPanel>
+                    </ListBoxItem>
+
+                    <ListBoxItem x:Name="Frame2ListBoxItem">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE141;" />
+                            <TextBlock Text="Favoritos" FontSize="24" Margin="20,0,0,0" />
+                        </StackPanel>
+                    </ListBoxItem>
+
+                    <ListBoxItem x:Name="Frame3ListBoxItem">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE716;" />
+                            <TextBlock Text="Comparativa" FontSize="24" Margin="20,0,0,0" />
+                        </StackPanel>
+                    </ListBoxItem>
+                </ListBox>
+            </SplitView.Pane>
+            <SplitView.Content>
+                <Frame x:Name="Frame"/>
+
+            </SplitView.Content>
+        </SplitView>
+
     </Grid>
+
 </Page>

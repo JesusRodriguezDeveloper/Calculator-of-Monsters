@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Windows.Storage;
 
 namespace AppCalculatorOfMonsters.ViewModels
 {
@@ -17,17 +18,32 @@ namespace AppCalculatorOfMonsters.ViewModels
         public ViewModelMainPage()
         {
 
-            String jsonData = leerTexto();
-
-            JObject principal = JObject.Parse(jsonData);
-
-            System.Diagnostics.Debug.WriteLine(principal.First);
-        }
-
-        private String leerTexto() {
-
-           return System.IO.File.ReadAllText(@"C:\Users\Santiago\Calculator-of-Monsters\AppCalculatorOfMonsters\Datos\monstruos.json");
+            cargadeDatos();
 
         }
+
+        private async void cargadeDatos()
+        {
+
+            //apertura del fichero de forma asincrona pasando ruta.
+            Uri uri = new Uri("ms-appx:///Datos/monstruos.json");
+            System.Diagnostics.Debug.WriteLine("Ruta cogida= "+uri.AbsolutePath);
+            StorageFile fichero = await StorageFile.GetFileFromApplicationUriAsync(uri);
+
+
+            //lectura como texto plano de un fichero
+            string salida = await Windows.Storage.FileIO.ReadTextAsync(fichero);
+            
+
+
+            //obtencion del objeto principal del json
+            JObject principal = JObject.Parse(salida);
+
+
+            System.Diagnostics.Debug.WriteLine("Hola mundo");
+
+        }
+
+        
     }
 }

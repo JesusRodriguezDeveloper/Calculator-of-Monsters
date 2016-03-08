@@ -4,12 +4,16 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:AppCalculatorOfMonsters.DeviceFamily_Desktop"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:partes="using:AppCalculatorOfMonsters"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock Text="Escritorio"/>
-        <TextBlock Text="Escritorio"/>
-        <TextBlock Text="Escritorio"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
     </Grid>
 </Page>

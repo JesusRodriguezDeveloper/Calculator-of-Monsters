@@ -26,7 +26,7 @@ namespace AppCalculatorOfMonsters
         {
             this.InitializeComponent();
 
-            ViewModels.ViewModelMainPage modelo = new ViewModels.ViewModelMainPage();
+            
             
         }
     }

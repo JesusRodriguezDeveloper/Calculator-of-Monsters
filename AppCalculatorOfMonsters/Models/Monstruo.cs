@@ -8,5 +8,6 @@ namespace AppCalculatorOfMonsters.Models
 {
     class Monstruo
     {
+        //TODO
     }
 }
